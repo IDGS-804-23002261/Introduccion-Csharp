@@ -1,0 +1,54 @@
+﻿@model List<IntroduccionC_.Models.Multiplicacion>
+
+@{
+    var resultado = "";
+    var proceso = "";
+
+    if (Model.Count > 0)
+    {
+        resultado = Model.Last().Resultado.ToString();
+        proceso = Model.Last().Proceso;
+    }
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <form action="/Multiplicacion/Multiplicacion" method="post">
+
+                <label>Número 1:</label>
+                <input type="text" name="Num1" />
+
+                <br />
+
+                <label>Número 2:</label>
+                <input type="text" name="Num2" />
+
+                <br />
+
+                <input type="submit" value="Calcular" />
+
+            </form>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <br />
+
+            <h2>Proceso:</h2>
+
+            <h3>@proceso</h3>
+
+            <h2>Resultado:</h2>
+
+            <h3>@resultado</h3>
+
+        </div>
+
+    </div>
+
+</div>
